@@ -13,4 +13,9 @@ public class PersonModel {
         this.city = city;
         this.country = country;
     }
+
+    public int getId() {
+        return id;
+    }
+
 }
