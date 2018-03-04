@@ -26,7 +26,7 @@ public class PublisherDao {
     }
 
     private PublisherModel createPublisherObject(ResultSet result) throws SQLException {
-        int id = result.getInt("publisher_id");
+        String id = result.getString("publisher_id");
         String name = result.getString("name");
         String city = result.getString("city");
         String country = result.getString("country");
@@ -47,13 +47,13 @@ public class PublisherDao {
         return publishersCollection;
     }
 
-    public PublisherModel findPublisherById(int id) {
+    public PublisherModel findPublisherById(String id) {
         List<PublisherModel> publishersCollection = getAllPublishers();
         PublisherModel matchedPublisher = null;
         for (PublisherModel publisher: publishersCollection) {
-            if (publisher.getId() == id) {
+            if (publisher.getId().equals(id)) {
                 matchedPublisher = publisher;
-            }
+             }
 
         }
         return  matchedPublisher;
