@@ -1,7 +1,9 @@
 package view;
 
+import model.BookType;
 
 import java.util.List;
+
 
 public class RootView {
 
@@ -9,11 +11,20 @@ public class RootView {
         System.out.println(text);
     }
 
-    public <T> void  displayCollection(List<T> collection) {
+    public <T> void displayListCollection(List<T> collection) {
         for (T element: collection) {
             System.out.println(element);
         }
+    }
 
-
+    public void displayAvailableTypes(List<BookType> availableTypes) {
+        System.out.println("\nAVAILABLE TYPES: ");
+        for (BookType type: availableTypes) {
+            System.out.println(type.getId() + ". " + type.getTypeName());
+        }
     }
 }
+
+
+
+
